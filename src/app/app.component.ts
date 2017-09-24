@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  items = ['Angular 4', 'React', 'Underscore'];
+  newItem = '';
+  pushItem = function () {
+    if (this.newItem != null) {
+      this.items.push(this.newItem);
+      this.newItem = '';
+    }
+
+  };
+  removeItem = function (index) {
+    this.items.splice(index, 1);
+  };
 }

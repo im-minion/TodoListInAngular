@@ -7,13 +7,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   items = ['Angular 4', 'React', 'Underscore'];
-  newItem = '';
+  newItem = null;
   pushItem = function () {
     if (this.newItem != null) {
       this.items.push(this.newItem);
-      this.newItem = '';
+      this.newItem = null;
     }
-
   };
   removeItem = function (index) {
     this.items.splice(index, 1);
